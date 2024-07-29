@@ -52,3 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// userRouter
+$route['user']['post'] = 'User_controller/user_post';
+$route['users']['get'] = /*class/function */ 'User_controller/users';
+$route['clear']['post'] = 'User_controller/truncate';
+$route['user/(:num)']['get'] = /*class/function/id */ 'User_controller/user_by_id/$1';
+$route['userdelete/(:num)']['get'] = /*class/function/id */ 'User_controller/remove_user/$1';
+$route['userupdate/(:num)']['post'] = /*class/function/id */ 'User_controller/user_update/$1';
+// --> not in function
+$route['login']['post'] = /*class/function*/ 'User_controller/login';
+
+// sectionRouter
